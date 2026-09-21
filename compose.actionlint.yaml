@@ -1,0 +1,8 @@
+services:
+  actionlint:
+    image: rhysd/actionlint:1.7.12
+    network_mode: none
+    restart: no
+    working_dir: /app
+    volumes:
+      - ./:/app:ro

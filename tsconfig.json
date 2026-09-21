@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@slidev/client": ["types/slidev-client"]
+    },
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowJs": false,
+    "isolatedModules": true,
+    "types": ["vitest/globals"]
+  },
+  "include": ["components/**/*.ts", "components/**/*.vue", "types/**/*.ts"]
+}

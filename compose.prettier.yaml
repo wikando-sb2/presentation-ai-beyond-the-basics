@@ -1,0 +1,36 @@
+# Prettier does not document an official Docker image. This runner intentionally
+# uses the official pnpm image and executes the repository's locked Prettier
+# dependency through the existing package.json scripts.
+services:
+  prettier:
+    image: ghcr.io/pnpm/pnpm:11.3.0
+    working_dir: /workspace
+    environment:
+      NODE_VERSION: ${NODE_VERSION:-22.22.0}
+      PATH: /pnpm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      PNPM_HOME: /pnpm
+      PNPM_STORE_DIR: /pnpm/store
+    volumes:
+      - .:/workspace
+      - pnpm-node-modules:/workspace/node_modules
+      - pnpm-runtime:/root/.local/share/pnpm
+      - pnpm-store:/pnpm/store
+
+  prettier-check:
+    image: ghcr.io/pnpm/pnpm:11.3.0
+    working_dir: /workspace
+    environment:
+      NODE_VERSION: ${NODE_VERSION:-22.22.0}
+      PATH: /pnpm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      PNPM_HOME: /pnpm
+      PNPM_STORE_DIR: /pnpm/store
+    volumes:
+      - .:/workspace:ro
+      - pnpm-node-modules:/workspace/node_modules
+      - pnpm-runtime:/root/.local/share/pnpm
+      - pnpm-store:/pnpm/store
+
+volumes:
+  pnpm-node-modules:
+  pnpm-runtime:
+  pnpm-store:

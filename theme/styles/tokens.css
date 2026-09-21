@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Code+Pro:wght@400;500;600;700&display=swap");
+
+:root {
+  --fbx-font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --fbx-font-mono:
+    "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --fbx-base-font-size: 16px;
+
+  --fbx-green: #0ca78b;
+  --fbx-lime: #71dd2a;
+  --fbx-purple: #9650c8;
+  --fbx-purple-light: #cc97f2;
+  --fbx-ink: #17202a;
+  --fbx-muted: #5e6a73;
+  --fbx-surface: #f7faf7;
+  --fbx-panel: #ffffff;
+  --fbx-border: #dfe8e4;
+
+  --fbx-gradient-cover: linear-gradient(
+    157.66deg,
+    #0ca78b 17.31%,
+    #71dd2a 86.75%
+  );
+  --fbx-gradient-purple-button:
+    linear-gradient(359deg, #9650c8 45.46%, #9650c800 111.16%), #cc97f2cc;
+  --fbx-gradient-white-button:
+    linear-gradient(357.24deg, #ffffffe6 18.87%, #ffffff52 96.1%), #fff;
+
+  --fbx-radius-panel: 28px;
+  --fbx-radius-small: 16px;
+  --fbx-shadow-soft: 0 18px 44px rgb(23 32 42 / 12%);
+  --fbx-shadow-panel: 0 26px 70px rgb(12 167 139 / 14%);
+
+  --fbx-background: var(--fbx-surface);
+  --fbx-text: var(--fbx-ink);
+  --fbx-text-muted: var(--fbx-muted);
+  --fbx-heading: #101820;
+  --fbx-button-purple-text: #fff;
+  --fbx-button-white-text: #23313b;
+
+  --slidev-theme-primary: var(--fbx-green);
+  --slidev-code-background: #10231f;
+  --slidev-code-foreground: #f4fff9;
+}
+
+.dark {
+  --fbx-ink: #f5fff9;
+  --fbx-muted: #b7c6c0;
+  --fbx-surface: #101820;
+  --fbx-panel: #17231f;
+  --fbx-border: #294038;
+  --fbx-background: #0d1512;
+  --fbx-text: #f5fff9;
+  --fbx-text-muted: #b7c6c0;
+  --fbx-heading: #ffffff;
+  --fbx-shadow-soft: 0 18px 44px rgb(0 0 0 / 30%);
+  --fbx-shadow-panel: 0 26px 70px rgb(0 0 0 / 28%);
+  --slidev-code-background: #07110f;
+  --slidev-code-foreground: #f4fff9;
+}

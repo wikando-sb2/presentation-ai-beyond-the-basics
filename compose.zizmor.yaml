@@ -1,0 +1,10 @@
+services:
+  zizmor:
+    image: ghcr.io/zizmorcore/zizmor:1.30.0
+    environment:
+      ZIZMOR_CONFIG: /app/.github/zizmor.yml
+    network_mode: none
+    restart: no
+    working_dir: /app
+    volumes:
+      - ./:/app:ro

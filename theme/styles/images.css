@@ -1,0 +1,9 @@
+.diagram {
+  border-radius: 0.5em;
+  border: 2px solid #666;
+  display: block;
+  margin: 1em auto;
+  max-height: 15.75em;
+  object-fit: contain;
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.25);
+}

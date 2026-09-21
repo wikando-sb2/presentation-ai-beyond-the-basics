@@ -1,0 +1,11 @@
+*.local
+.DS_Store
+.idea
+.playwright-cli
+.playwright-mcp
+.pnpm-store
+.remote-assets
+.vite-inspect
+components.d.ts
+dist
+node_modules

@@ -1,0 +1,141 @@
+.theme-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10.5rem;
+  min-height: 2.45rem;
+  margin: 1.4rem 0.9rem 0 0;
+  padding: 0.55rem 1.6rem;
+  overflow: hidden;
+  border: 0;
+  border-radius: 800px;
+  font-family: var(--fbx-font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgb(52 58 64 / 10%);
+  transition:
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.slidev-layout .theme-button {
+  border: 0;
+}
+
+.theme-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.theme-button__label {
+  position: relative;
+  z-index: 1;
+}
+
+.theme-button:hover,
+.theme-button:focus-visible {
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgb(52 58 64 / 14%);
+}
+
+.slidev-layout .theme-button:hover,
+.slidev-layout .theme-button:focus-visible {
+  border: 0;
+  text-decoration: none;
+}
+
+.theme-button:focus {
+  outline: 2px solid rgb(255 255 255 / 70%);
+  outline-offset: 2px;
+}
+
+.theme-button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+.slidev-layout .theme-button-primary,
+.slidev-layout .theme-button-purple,
+.slidev-layout .theme-button-cta {
+  color: var(--fbx-button-purple-text);
+  background: var(--fbx-gradient-purple-button);
+}
+
+.theme-button-primary::before,
+.theme-button-purple::before,
+.theme-button-cta::before {
+  background:
+    linear-gradient(180deg, rgb(206 151 242 / 74%) 0%, rgb(150 80 200) 78%),
+    #9650c8;
+}
+
+.slidev-layout .theme-button-primary:hover,
+.slidev-layout .theme-button-primary:focus-visible,
+.slidev-layout .theme-button-purple:hover,
+.slidev-layout .theme-button-purple:focus-visible,
+.slidev-layout .theme-button-cta:hover,
+.slidev-layout .theme-button-cta:focus-visible {
+  color: var(--fbx-button-purple-text);
+  filter: saturate(1.04);
+}
+
+.theme-button-primary:hover::before,
+.theme-button-primary:focus-visible::before,
+.theme-button-purple:hover::before,
+.theme-button-purple:focus-visible::before,
+.theme-button-cta:hover::before,
+.theme-button-cta:focus-visible::before {
+  opacity: 1;
+}
+
+.slidev-layout .theme-button-secondary,
+.slidev-layout .theme-button-white {
+  color: var(--fbx-button-white-text);
+  background: var(--fbx-gradient-white-button);
+}
+
+.theme-button-secondary::before,
+.theme-button-white::before {
+  background: linear-gradient(357.24deg, #fff 18.87%, #ffffffbd 96.1%), #fff;
+}
+
+.slidev-layout .theme-button-secondary:hover,
+.slidev-layout .theme-button-secondary:focus-visible,
+.slidev-layout .theme-button-white:hover,
+.slidev-layout .theme-button-white:focus-visible {
+  color: var(--fbx-button-white-text);
+}
+
+.theme-button-secondary:hover::before,
+.theme-button-secondary:focus-visible::before,
+.theme-button-white:hover::before,
+.theme-button-white:focus-visible::before {
+  opacity: 1;
+}
+
+.slidev-layout .theme-button-text {
+  min-width: auto;
+  min-height: auto;
+  padding: 0;
+  color: var(--fbx-green);
+  background: transparent;
+  box-shadow: none;
+  font-weight: 600;
+  line-height: 1.6;
+  text-decoration: underline;
+}
+
+.slidev-layout .theme-button-text:hover,
+.slidev-layout .theme-button-text:focus-visible {
+  color: var(--fbx-green);
+  text-shadow: 0 5px 10px rgb(52 58 64 / 10%);
+  text-decoration: underline;
+}

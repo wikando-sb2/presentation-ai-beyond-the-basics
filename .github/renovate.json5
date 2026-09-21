@@ -1,0 +1,104 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    'helpers:pinGitHubActionDigestsToSemver',
+  ],
+  dependencyDashboard: true,
+  labels: [],
+  minimumReleaseAge: '24 hours',
+  prCreation: 'immediate',
+  rangeStrategy: 'update-lockfile',
+  platformAutomerge: true,
+  constraints: {
+    node: '22.22.0',
+    pnpm: '11.3.0',
+  },
+  customManagers: [
+    {
+      customType: 'regex',
+      description: 'Keep repeated Node.js runtime declarations coordinated',
+      managerFilePatterns: [
+        '/^\\.node-version$/',
+        '/^Makefile$/',
+        '/^compose\\.pnpm\\.yaml$/',
+        '/^compose\\.prettier\\.yaml$/',
+        '/^\\.github\\/workflows\\/ci\\.yml$/',
+        '/^\\.github\\/renovate\\.json5$/',
+      ],
+      matchStrings: [
+        '^(?<currentValue>\\d+\\.\\d+\\.\\d+)$',
+        'NODE_VERSION \\?= (?<currentValue>\\d+\\.\\d+\\.\\d+)',
+        'NODE_VERSION: \\$\\{NODE_VERSION:-(?<currentValue>\\d+\\.\\d+\\.\\d+)\\}',
+        'node-version: (?<currentValue>\\d+\\.\\d+\\.\\d+)',
+        "node:\\s*(?:\"|')(?<currentValue>\\d+\\.\\d+\\.\\d+)(?:\"|')",
+      ],
+      depNameTemplate: 'node',
+      datasourceTemplate: 'node-version',
+    },
+    {
+      customType: 'regex',
+      description: 'Keep repeated pnpm version declarations coordinated',
+      managerFilePatterns: [
+        '/^package\\.json$/',
+        '/^\\.github\\/renovate\\.json5$/',
+      ],
+      matchStrings: [
+        '"packageManager": "pnpm@(?<currentValue>\\d+\\.\\d+\\.\\d+)"',
+        '"pnpm": "(?<currentValue>\\d+\\.\\d+\\.\\d+)"',
+        "pnpm:\\s*(?:\"|')(?<currentValue>\\d+\\.\\d+\\.\\d+)(?:\"|')",
+      ],
+      depNameTemplate: 'pnpm',
+      datasourceTemplate: 'npm',
+    },
+    {
+      customType: 'regex',
+      description: 'Update the zizmor version used by the CI action',
+      managerFilePatterns: ['/^\.github\/workflows\/gha-lint\.yml$/'],
+      matchStrings: [
+        'uses: zizmorcore/zizmor-action@[^\\n]+[\\s\\S]*?version:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)',
+      ],
+      depNameTemplate: 'ghcr.io/zizmorcore/zizmor',
+      datasourceTemplate: 'docker',
+    },
+  ],
+  packageRules: [
+    {
+      description: 'Coordinate repeated Node.js declarations',
+      matchDepNames: ['node'],
+      groupName: 'node.js runtime',
+      separateMajorMinor: false,
+    },
+    {
+      description: 'Coordinate pnpm declarations and the official pnpm image',
+      matchPackageNames: ['pnpm', 'ghcr.io/pnpm/pnpm'],
+      groupName: 'pnpm',
+      separateMajorMinor: false,
+    },
+    {
+      description: 'Group zizmor updates for local and CI use',
+      matchDepNames: ['ghcr.io/zizmorcore/zizmor'],
+      groupName: 'zizmor',
+    },
+    {
+      description: 'Use build(deps): prefix for npm and pnpm updates',
+      matchManagers: ['npm'],
+      commitMessagePrefix: 'build(deps):',
+    },
+    {
+      description: 'Use build(deps): prefix for GitHub Actions updates',
+      matchManagers: ['github-actions'],
+      commitMessagePrefix: 'build(deps):',
+    },
+    {
+      description: 'Use build(docker): prefix for Docker Compose updates',
+      matchManagers: ['docker-compose'],
+      commitMessagePrefix: 'build(docker):',
+    },
+    {
+      description: 'Request native auto-merge for every dependency update type',
+      matchManagers: ['npm', 'github-actions', 'docker-compose', 'custom.regex'],
+      automerge: true,
+    },
+  ],
+}

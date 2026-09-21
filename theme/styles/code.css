@@ -1,0 +1,25 @@
+.slidev-layout pre {
+  padding: 1rem 1.15rem;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: var(--fbx-radius-small);
+  background: var(--slidev-code-background);
+  color: var(--slidev-code-foreground);
+  box-shadow: var(--fbx-shadow-soft);
+  font-family: var(--fbx-font-mono);
+}
+
+.slidev-layout * + .slidev-code-wrapper,
+.slidev-layout * + pre {
+  margin-top: 1rem !important;
+}
+
+.slidev-layout code {
+  font-family: var(--fbx-font-mono);
+}
+
+.slidev-layout :not(pre) > code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.4rem;
+  color: var(--fbx-purple);
+  background: rgb(150 80 200 / 12%);
+}

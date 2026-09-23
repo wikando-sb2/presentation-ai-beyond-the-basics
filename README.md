@@ -82,6 +82,29 @@ make format-check
 - Use theme components for recurring patterns: `ThemeAgenda`, `ThemeAgendaItem`, `ThemeLead`, `ThemeMetricStack`,
   `ThemeMetricStackItem`, `ThemeShowcase`, and `ThemeButton`.
 
+### Hand-drawn annotations
+
+Wrap inline text or an inline element with `NeatAnnotation`:
+
+```md
+<NeatAnnotation note="Review this" direction="n" color="red">
+  release date
+</NeatAnnotation>
+
+<NeatAnnotation color="amber">important text</NeatAnnotation>
+```
+
+`note` adds an arrow and label; omit it for a marker only. `direction` is the direction the arrow points
+(`n`, `ne`, `e`, `se`, `s`, `sw`, `w`, `nw`), so `n` places the label below the target. Colors are `amber`,
+`blue`, `green`, `red`, `purple`, and `rainbow`; omit `color` for warm gray. `no-mark` removes the target
+highlight. For example, use `style="--ann-color: #00c2d7; --ann-label-max-width: 220px"` for custom color
+and label width. The upstream `--ann-target-gap`, `--ann-label-gap`, `--ann-lower-label-gap`,
+`--ann-arrow-x`, `--ann-arrow-y`, `--ann-text-x`, `--ann-text-y`, and `--ann-rotate` variables are also
+available. Leave space around the target for its absolute-positioned label.
+
+The component bundles its CSS and Shantell Sans font locally; decks that do not use it do not include
+either asset. See [component sources and licenses](components/NeatAnnotation/README.md).
+
 ## Comark Syntax
 
 `slides.md` enables Slidev Comark syntax by default with `comark: true`.

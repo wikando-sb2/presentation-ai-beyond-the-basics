@@ -1,0 +1,15 @@
+.ai-cover {
+  --fbx-text-muted: #b7c6c0;
+  background:
+    radial-gradient(ellipse at 50% 88%, #0b5049 0%, transparent 53%),
+    radial-gradient(ellipse at 90% 0%, #163e3b 0%, transparent 55%), #071b21;
+}
+.ai-cover h1 {
+  color: #fff;
+}
+.ai-cover .center-content {
+  grid-template-columns: minmax(0, 1fr);
+}
+.ai-cover .theme-footer {
+  color: #b7c6c0;
+}

@@ -1,11 +1,12 @@
 ---
 theme: ./theme
 comark: true
-layout: cover
-title: FundraisingBox Slidev Template
+layout: center
+class: ai-cover
+title: AI Beyond the Basics
 info: |
-  A Wikando/FundraisingBox Slidev template with local theme layouts,
-  branded tokens, imported snippets, Vue components, and imported pages.
+  Illustrated foundations of AI engineering: prediction, self-supervision,
+  foundation models, and adapting models to applications.
 author: Wikando / FundraisingBox
 transition: slide-left
 drawings:
@@ -13,141 +14,135 @@ drawings:
 duration: 25min
 lineNumbers: true
 themeFooter:
-  text: Wikando Slidev Template
+  text: 💫 AI Beyond the Basics
 ---
 
-# FundraisingBox
+# AI Beyond the Basics
 
-## Slidev template for Wikando presentations
+<CoverPredictionApplication />
 
-Practical slides for product demos, technical walkthroughs, and internal enablement.
+---
+layout: section-cover
+transition: fade
+---
 
-<ThemeButton href="https://fundraisingbox.com" variant="purple">FundraisingBox</ThemeButton>
-<ThemeButton href="https://wikando.de" variant="white">Wikando</ThemeButton>
+# The Rise of AI Engineering
+
+<CoverRise />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# Language Models
+
+<CoverLanguageModels />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# Large Language Models
+
+<CoverLargeLanguageModels />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# Foundation Models
+
+<CoverFoundationModels />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# From Foundation Models to AI Engineering
+
+<CoverFoundationToEngineering />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# Planning AI Applications
+
+<CoverPlanning />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# The AI Engineering Stack
+
+<CoverEngineeringStack />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# Three Layers of the AI Stack
+
+<CoverThreeLayers />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# AI Engineering vs ML Engineering
+
+<CoverAiVsMl />
+
+---
+layout: section-cover
+transition: fade
+---
+
+# AI Engineering vs Full‑Stack Engineering
+
+<CoverAiVsFullStack />
 
 ---
 
-# Agenda
+# One token at a time
 
-<ThemeAgenda columns="2">
-  <ThemeAgendaItem title="Brand basics" description="Typography, gradients, buttons, and slide rhythm." />
-  <ThemeAgendaItem title="Content layouts" description="Default, split, and centered layouts for common decks." />
-  <ThemeAgendaItem title="Developer examples" description="Imported snippets, Vue components, and reusable pages." />
-  <ThemeAgendaItem title="Export and deployment" description="Build checks, static output, and PDF export notes." />
-</ThemeAgenda>
+Two training objectives. Two different views of context.
+
+<LanguageModelPrediction />
 
 ---
 
-# Content Layout Example
+# The text supplies the target
 
-## Default layout
+Self-supervision turns existing text into training examples.
 
-Use this layout for narrative slides with a clear statement and a compact set of supporting points.
-
-- Lead with the outcome or decision.
-- Keep bullets short enough to scan from the back of a room.
-- Use the slide canvas for content instead of heavy decorative frames.
-
----
-layout: two-cols
-layoutClass: gap-10
----
-
-# Split Layout Example
-
-## Fundraising flow
-
-Map the donor journey from a campaign touchpoint into CRM, payments, and reporting.
-
-::right::
-
-<ThemeMetricStack>
-  <ThemeMetricStackItem>Spenden sammeln</ThemeMetricStackItem>
-  <ThemeMetricStackItem>CRM synchronisieren</ThemeMetricStackItem>
-  <ThemeMetricStackItem>Payments abgleichen</ThemeMetricStackItem>
-</ThemeMetricStack>
-
----
-layout: center
----
-
-# Center Layout Example
-
-<ThemeLead>
-  Use centered slides for section transitions, key decisions, or one strong product message.
-</ThemeLead>
-
-<ThemeButton variant="purple">Make impact visible</ThemeButton>
-<ThemeButton variant="white">Keep teams focused</ThemeButton>
-
----
-
-# Imported Code Snippet
-
-The deck imports example TypeScript from `snippets/external.ts`, so template users can see the standard Slidev snippet workflow.
-
-<<< @/snippets/external.ts#snippet {1-5}
-
----
-
-# Component Example
-
-<ThemeShowcase
-  eyebrow="Vue component"
-  title="Interactive counter"
-  description="The existing components/Counter.vue example remains part of the deck and can be edited like any local Slidev component."
->
-  <Counter :count="12" />
-</ThemeShowcase>
-
----
-layout: agent-harness
----
-
-<AgentHarness
-  :options="{
-    initialAgentMessage: 'Ready. Start the workflow conversation.',
-    initialModel: 'GPT-5.5',
-    initialEffort: 'Medium',
-    chats: [
-      {
-        human: '/code-review PR#1737',
-        agent: 'I’ll review PR #1737. I’ll gather the diff, inspect touched files, verify the base branch, and report only concrete findings with file references.',
-      },
-      {
-        human: 'Which checks should run before the human reviewer reads it?',
-        agent: 'I’ll run static checks, inspect changed modules, verify security-sensitive paths, and only escalate findings that are reproducible from the code.',
-      },
-      {
-        human: 'Summarize the final handoff for the reviewer',
-        agent: 'The handoff should include confirmed findings, reviewed scope, assumptions, non-findings worth mentioning, and any tests that could not be executed.',
-      },
-    ],
-  }"
-/>
-
----
-src: ./pages/imported-slides.md
----
+<SelfSupervision />
 
 ---
 layout: center
 ---
 
-# Thank You
+# Plausible is not the same as correct
 
 <ThemeLead>
-  Wikando / FundraisingBox
+  Prediction makes generation possible.<br />
+  Evaluation makes it useful for your application.
 </ThemeLead>
-
-<ThemeButton href="https://fundraisingbox.com" variant="purple">fundraisingbox.com</ThemeButton>
-<ThemeButton href="https://wikando.de" variant="white">wikando.de</ThemeButton>
 
 ---
 
 # Sources
 
-- FundraisingBox website and product messaging: https://fundraisingbox.com
-- Wikando company website: https://wikando.de
-- Slidev documentation: https://sli.dev
-- Fonts: Montserrat and Source Code Pro
+- Chip Huyen, *AI Engineering: Building Applications with Foundation Models*.
+- Stanford CRFM, [On the Opportunities and Risks of Foundation Models](https://crfm.stanford.edu/report).
+- Hugging Face. [Causal and masked language modeling](https://huggingface.co/docs/transformers/v4.26.1/en/tasks/language_modeling).
+- Patrick Lewis, [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401).

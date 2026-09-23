@@ -1,0 +1,15 @@
+{
+  "overrides": [
+    {
+      "files": [
+        "components/AIEngineeringPaths.vue",
+        "components/FoundationModelMap.vue",
+        "components/LanguageModelPrediction.vue",
+        "components/SelfSupervision.vue"
+      ],
+      "options": {
+        "htmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}

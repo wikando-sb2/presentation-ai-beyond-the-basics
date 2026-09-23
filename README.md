@@ -75,8 +75,8 @@ make format-check
 
 ## Customize Slides
 
-- Edit `slides.md` for the main deck content.
-- Add reusable slide sections in `pages/` and import them with `src`.
+- Keep all slide content in `slides.md`.
+- Put presentation CSS in `styles/index.css` or other external CSS files, not in `slides.md`.
 - Add TypeScript examples in `snippets/` and import them with Slidev snippet syntax.
 - Add interactive Vue examples in `components/` and use them directly in slides.
 - Use theme components for recurring patterns: `ThemeAgenda`, `ThemeAgendaItem`, `ThemeLead`, `ThemeMetricStack`,
